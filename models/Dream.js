@@ -7,7 +7,7 @@ class Dream extends Model {}
 Dream.init(
     {
         id: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true
@@ -20,9 +20,9 @@ Dream.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        public: {
-            type: DataType.BOOLEAN,
-        },
+        // public: {
+        //     type: DataType.BOOLEAN,
+        // },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
