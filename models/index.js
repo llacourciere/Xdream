@@ -46,4 +46,4 @@ Comment.belongsTo(Dream, {
 
 
 
-module.exports = { User, Dream, Comment, Tag }
+module.exports = { User, Dream, Comment, Tag, DreamTag}
