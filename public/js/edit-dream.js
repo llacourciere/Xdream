@@ -1,3 +1,5 @@
+console.log("this page has loaded")
+
 async function editFormHandler(event) {
     event.preventDefault();
 
@@ -18,7 +20,7 @@ async function editFormHandler(event) {
     });
 
     if (response.ok) {
-        document.location.replace('/dashboard/');
+        document.location.replace('/dashboard');
     } else {
         alert(response.statusText)
     }

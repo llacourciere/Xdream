@@ -1,0 +1,31 @@
+<section>
+    <h2> Record Your Dream</h2>
+
+    <form class="new-dream-form">
+        <div>
+            <label for="dream-title">Title</label>
+            <input type="text" name="dream-title" id="dream-title" />
+        </div>
+        <div>
+            <textarea name="dream-body"></textarea>
+        </div>
+        <label for="public-dream">Would you like this dream to be public?</label>
+        <input type="checkbox" id="public-dream">
+
+        <button type="submit" class="btn">Create</button>
+    </form>
+</section>
+
+{{#if dreams.length}}
+<section>
+    <h2>Your Public Dreams</h2>
+    <ol>
+        {{#each dreams as |dream|}}
+        <li>
+            {{> dream-info dream}}
+            <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+        </li>
+        {{/each}}
+    </ol>
+</section>
+{{/if}}
