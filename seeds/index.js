@@ -1,6 +1,7 @@
 const sequelize = require('../config/connection');
 const seedUser= require('./userData');
 const seedDreams = require('./dreamData');
+const seedTags = require('./tagData');
 
 const seedAll = async () => {
   await sequelize.sync({ force: true });
@@ -8,7 +9,11 @@ const seedAll = async () => {
   await seedUser();
   console.log('---Users Seeded---');
 
-  //await seedDreams();
+  await seedTags();
+  console.log('---Tags Seeded----');
+
+  await seedDreams();
+  console.log('---Dreams Seeded----');
 
   process.exit(0);
 };
