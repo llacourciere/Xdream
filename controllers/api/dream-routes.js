@@ -77,8 +77,8 @@ router.post('/', (req, res) => {
         title: req.body.title,
         description: req.body.description,
         public: req.body.public,
-        user_id: req.session.user_id,
-        tag_id: req.session.tag_id
+        user_id: req.body.user_id,
+        tag_id: req.body.tag_id
       })
         .then(dbPostData => res.json(dbPostData))
         .catch(err => {
@@ -88,5 +88,48 @@ router.post('/', (req, res) => {
     }
   });
 
-
+  router.put('/:id', (req, res) => {
+    Dream.update(
+      {
+        title: req.body.title,
+        description: req.body.description
+      },
+      {
+        where: {
+          id: req.params.id
+        }
+      }
+    )
+      .then(dbDreamData => {
+        if (!dbDreamData) {
+          res.status(404).json({ message: 'No dream found with this id' });
+          return;
+        }
+        res.json(dbDreamData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
+  
+  router.delete('/:id', (req, res) => {
+    console.log('id', req.params.id);
+    Dream.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+      .then(dbDreamData => {
+        if (!dbDreamData) {
+          res.status(404).json({ message: 'No dream found with this id' });
+          return;
+        }
+        res.json(dbDreamData);
+      })
+      .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+      });
+  });
 module.exports = router;
