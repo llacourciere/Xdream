@@ -17,15 +17,29 @@
 </section>
 
 {{#if dreams.length}}
+
 <section>
     <h2>Your Public Dreams</h2>
+    {{#each dreams as |dream|}}
+    {{#if public}}
     <ol>
-        {{#each dreams as |dream|}}
         <li>
             {{> dream-info dream}}
             <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
         </li>
-        {{/each}}
     </ol>
+     {{/if}}
+    {{/each}}
+    <h2>Your Private Dreams</h2>
+    {{#each dreams as |dream|}}
+    {{#unless public}}
+    <ol>
+        <li>
+            {{> dream-info dream}}
+            <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+        </li>
+    </ol>
+    {{/unless}}
+    {{/each}}
 </section>
 {{/if}}
