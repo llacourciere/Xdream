@@ -1,0 +1,26 @@
+<article>
+    <a href="/dashboard">My Dashboard</a>
+    <h2>
+        Edit Dream
+    </h2>
+    <form>
+        <div>
+            <input type="text" name="dream-title" value="{{dream.title}}" />
+             <input type="text" name="dream-description" value="{{dream.description}}" />
+        </div>
+        <button type="submit">Save post</button>
+        <button type="button">Delete Post</button>
+    </form>
+</article>
+
+<form>
+  <div>
+    <textarea name="comment-body"></textarea>
+  </div>
+
+  <div>
+    <button type="submit">add comment</button>
+  </div>
+</form>
+
+{{> comments dream.comments}}
