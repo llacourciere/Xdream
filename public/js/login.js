@@ -5,15 +5,15 @@ async function signupFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
 
-    if(username && email && pasword) {
+    if(username && email && password) {
         const response = await fetch('/api/users', {
-            mothed: 'post',
+            method: 'post',
             body: JSON.stringify({
                 username,
                 email,
                 password
             }),
-            headers: { 'Contenet-type': 'application/json' }
+            headers: { 'Content-type': 'application/json' }
         });
 
         if(response.ok) {
@@ -31,13 +31,13 @@ async function loginFormHandler(event) {
     const password = document.querySelector('#password-login').value.trim();
 
     if(email && password) {
-        const response = await fetch('api/users/login', {
+        const response = await fetch('/api/users/login', {
             method: 'post',
             body: JSON.stringify({
                 email,
                 password
             }),
-            headers: { 'Content-type': 'application/json'}
+            headers: { 'Content-type': 'application/json' }
         })
 
         if(response.ok) {

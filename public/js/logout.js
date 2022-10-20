@@ -1,7 +1,7 @@
 const { response } = require("express");
 
 async function logout() {
-    const reponse = await fetch('/api/users/logout', {
+    const response = await fetch('/api/users/logout', {
         method: 'post',
         headers: { 'Content-Type': 'application/json' }
     });
@@ -12,4 +12,5 @@ async function logout() {
     }
 }
 
+console.log('I have loaded');
 document.querySelector('#logout').addEventListener('click', logout);
