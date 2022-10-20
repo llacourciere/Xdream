@@ -20,9 +20,10 @@ Dream.init(
             type: DataTypes.STRING,
             allowNull: false
         },
-        // public: {
-        //     type: DataType.BOOLEAN,
-        // },
+        public: {
+            type: DataTypes.BOOLEAN,
+            defaultValue: false
+        },
         user_id: {
             type: DataTypes.INTEGER,
             references: {
