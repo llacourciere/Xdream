@@ -2,6 +2,7 @@ const router = require('express').Router();
 const { User, Dream, Comment, Tag } = require('../models');
 
 router.get('/', (req, res) => {
+    console.log("i'm hit!");
     Dream.findAll({
         where: {
             public: true
@@ -9,7 +10,7 @@ router.get('/', (req, res) => {
         attributes: [
             'id',
             'title',
-            'descrtiption',
+            'description',
             'public',
             'created_at'
         ],
@@ -60,7 +61,7 @@ router.get('/dream/:id', (req, res) => {
         attributes: [
             'id',
             'title',
-            'descrtiption',
+            'description',
             'public',
             'created_at'
         ],

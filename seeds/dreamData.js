@@ -1,4 +1,4 @@
-const { Dream} = require('../models');
+const { Dream } = require('../models');
 
 const dreamData = [
   {
