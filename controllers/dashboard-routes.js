@@ -41,7 +41,7 @@ router.get('/', withAuth, (req, res) => {
 });
 
 router.get('/edit/:id', withAuth, (req, res) => {
-    Dream.findAll({
+    Dream.findOne({
         where: {
             id: req.params.id
         },
