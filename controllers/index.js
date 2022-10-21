@@ -3,11 +3,13 @@ const router = require('express').Router();
 const apiRoutes = require('./api');
 const homeRoutes = require('./home-routes');
 const dashboardRoutes = require('./dashboard-routes');
+const dreamForumRoutes = require('./dream-forum-routes');
 
 
 router.use('/api', apiRoutes);
 router.use('/dashboard', dashboardRoutes);
-router.use('/', homeRoutes)
+router.use('/', homeRoutes);
+router.use('/dream-forum', dreamForumRoutes);
 
 
 router.use((req, res) => {
