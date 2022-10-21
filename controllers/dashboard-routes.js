@@ -13,7 +13,8 @@ router.get('/', withAuth, (req, res) => {
             'title',
             'description',
             'public',
-            'tag_id'
+            'tag_id', 
+            'created_at'
         ],
         include : [
             {
