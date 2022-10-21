@@ -1,0 +1,16 @@
+{{#if dreams.length}}
+
+<section>
+    <h2>Dreamscape Forum</h2>
+    {{#each dreams as |dream|}}
+    {{#if public}}
+    <ol>
+        <li>
+            {{> dream-info dream}}
+        </li>
+    </ol>
+     {{/if}}
+    {{/each}}
+  
+</section>
+{{/if}}
