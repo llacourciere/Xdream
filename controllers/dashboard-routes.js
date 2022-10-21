@@ -1,5 +1,5 @@
 const router = require('express').Router();
-// const sequelize = require('../config/connection');  I DONT THINK WE NEED THIS -KEVIN
+//const sequelize = require('../config/connection'); I DO NOT THINK WE NEED THIS -KEVIN
 const withAuth = require('../utils/auth');
 const { Dream, User, Comment } = require('../models');
 
@@ -69,19 +69,19 @@ router.get('/edit/:id', withAuth, (req, res) => {
     })
         .then(dbDreamData => {
             if (!dbDreamData) {
-                res.status(404).json({ message: 'No dream found with this id' });
-                return;
-            }
-            const dream = dbDreamData.get({ plain: true });
-            res.render('edit-dream', {
-                dream,
-                loggedIn: true
-            });
-        })
-        .catch(err => {
-            console.log(err);
-            res.status(500).json(err);
-        });
-})
+            res.status(404).json({ message: 'No dream found with this id' });
+            return;
+        }
+        const dream = dbDreamData.get({ plain: true });
+        res.render('edit-dream', {
+            dream,
+            loggedIn: true
+        });        
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
+});
 
 module.exports = router;
