@@ -1,55 +1,67 @@
-<section>
-    <h2> Record Your Dream</h2>
+<link rel="stylesheet" href="/css/dashboard.css">
 
-    <form class="new-dream-form">
-        <div>
-            <label for="dream-title">Title</label>
+<section class="d-flex justify-content-center container">
+    <form class="new-dream-form col-12" >
+    <h2> Record Your Dream</h2>
+        <div class="">
+            <label for="dream-title"><strong>Title</strong></label>
             <input type="text" name="dream-title" id="dream-title" />
         </div>
-        <div>
-            <textarea name="dream-body"></textarea>
+        <div class="">
+            <textarea name="dream-body" placeholder="Describe your dream here"></textarea>
         </div>
 
         <label for="public-dream">Would you like this dream to be public?</label>
         <input type="checkbox" id="public-dream">
 
 
-        <span>Select tags To categorize your dream?</span>
-        {{#each tags as |tag|}}
-
-                <label for="dream-tags">{{tag_name}}</label>
-                <input type="checkbox" id="dream-tags">
-
-        {{/each}}
-
-        <button type="submit" class="btn">Create</button>
+        <div class="dropdown my-1">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                aria-expanded="false">
+                Add a tag
+            </button>
+            <div class="dropdown-menu">
+                <a class="dropdown-item" href="#">Nightmare</a>
+                <a class="dropdown-item" href="#">Lucid</a>
+                <a class="dropdown-item" href="#">Realistic</a>
+                <a class="dropdown-item" href="#">Reoccurring</a>
+                <a class="dropdown-item" href="#">Prophetic</a>
+                <a class="dropdown-item" href="#">Daydream</a>
+                <a class="dropdown-item" href="#">Erotic</a>
+            </div>
+        <button type="submit" class="btn btn-dark">Create</button>
+        </div>
     </form>
 </section>
 
 {{#if dreams.length}}
 
-<section>
-    <h2>Your Public Dreams</h2>
-    {{#each dreams as |dream|}}
-    {{#if public}}
-    <ol>
-        <li>
-            {{> dream-info dream}}
-            <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
-        </li>
-    </ol>
-    {{/if}}
-    {{/each}}
-    <h2>Your Private Dreams</h2>
-    {{#each dreams as |dream|}}
-    {{#unless public}}
-    <ol>
-        <li>
-            {{> dream-info dream}}
-            <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
-        </li>
-    </ol>
-    {{/unless}}
-    {{/each}}
+<section class="row justify-content-around">
+    <div class="col-12 col-sm-6">
+        <h2>Your Public Dreams</h2>
+        {{#each dreams as |dream|}}
+        {{#if public}}
+        <ol>
+            <li class="card">
+                {{> dream-info dream}}
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+            </li>
+        </ol>
+        {{/if}}
+        {{/each}}
+    </div>
+    <div class="col-12 col-sm-6">
+        <h2>Your Private Dreams</h2>
+        {{#each dreams as |dream|}}
+        {{#unless public}}
+        <ol>
+            <li class="card">
+                {{> dream-info dream}}
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+            </li>
+        </ol>
+        {{/unless}}
+        {{/each}}
+    </div>
 </section>
 {{/if}}
