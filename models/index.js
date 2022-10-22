@@ -27,12 +27,12 @@ Dream.hasMany(Comment, {
 });
 
 Dream.belongsToMany(Tag, {
-    through: DreamTag,
-    foreignKey: 'dream_id'
+    through: Tag,
+    foreignKey: 'tag_id'
 });
 
 Tag.belongsToMany(Dream, {
-    through: DreamTag,
+    through: Tag,
     foreignKey: 'tag_id'
 });
 
