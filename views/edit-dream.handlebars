@@ -9,7 +9,7 @@
              <input type="text" name="dream-description" value="{{dream.description}}" />
         </div>
         <button type="submit">Save post</button>
-        <button type="button">Delete Post</button>
+        <button type="button" class="delete-dream-btn">Delete Post</button>
     </form>
 </article>
 <a href="/dream/{{id}}">{{comments.length}} comment(s)</a>
@@ -17,3 +17,4 @@
 {{> comments dream.comments}}
 
 <script src="/js/edit-dream.js"></script>
+<script src="/js/delete-dream.js"></script>
