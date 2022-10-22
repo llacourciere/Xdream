@@ -11,3 +11,26 @@ body{
     background-size: cover;
 }
 
+.card {
+    margin: 100px;
+    height: 270px;
+
+}
+
+.title {
+    font-weight: bolder;
+    font-size: 35px;
+}
+
+.meta {
+    margin-top: 20px;
+}
+
+.description {
+    padding: 30px;
+}
+
+#dreamscape-title {
+    font-size: 50px;
+}
+
