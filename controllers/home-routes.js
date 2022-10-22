@@ -68,6 +68,7 @@ router.get('/dream/:id', (req, res) => {
         include: [
             {
                 model: Comment,
+                attributes: ['id', 'comment_text', 'dream_id', 'created_at'],
                 include: {
                     model: User,
                     attributes:['username']
