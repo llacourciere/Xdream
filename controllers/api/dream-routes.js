@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const withAuth = require('../../utils/auth');
 const sequelize = require('../../config/connection');
 const { Dream, User, Comment, DreamTag } = require('../../models');
 
@@ -113,7 +114,7 @@ router.post('/', (req, res) => {
       });
   });
   
-  router.delete('/:id', (req, res) => {
+  router.delete('/:id', withAuth, (req, res) => {
     console.log('id', req.params.id);
     Dream.destroy({
       where: {
