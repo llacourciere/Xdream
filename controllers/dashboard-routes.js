@@ -1,7 +1,7 @@
 const router = require('express').Router();
 //const sequelize = require('../config/connection'); I DO NOT THINK WE NEED THIS -KEVIN
 const withAuth = require('../utils/auth');
-const { Dream, User, Comment } = require('../models');
+const { Dream, User, Comment, Tag } = require('../models');
 
 router.get('/', withAuth, (req, res) => {
     Dream.findAll({
@@ -28,6 +28,10 @@ router.get('/', withAuth, (req, res) => {
             {
                 model: User,
                 attributes: ['username']
+            },
+            {
+               model: Tag,
+               attributes: ['id', 'tag_name'] 
             }
         ]
     })
@@ -65,7 +69,11 @@ router.get('/edit/:id', withAuth, (req, res) => {
             {
                 model: User, 
                 attributes: ['username']
-            }
+            },
+            {
+                model: Tag,
+                attributes: ['id', 'tag_name'] 
+             }
         ]
     })
         .then(dbDreamData => {
@@ -83,6 +91,17 @@ router.get('/edit/:id', withAuth, (req, res) => {
         console.log(err);
         res.status(500).json(err);
     });
+});
+
+router.get('/tags', (req, res)=> {
+    Tag.findAll()
+    .then(dbTagData => {
+        const tag = dbTagData.get({ plain: true });
+        res.render('dashboard', { tag, loggedIn: true })})
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    })
 });
 
 module.exports = router;

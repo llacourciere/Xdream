@@ -1,9 +1,15 @@
+const tag = fetch('/api/tags')
+.then((response) => response.json())
+.then((data) => console.log(data))
+
 async function addDreamHandler(event) {
     event.preventDefault();
 
     const description = document.querySelector('textarea[name="dream-body"]').value.trim();
     const public = document.getElementById('public-dream').checked;
     const title = document.querySelector('#dream-title').value.trim();
+
+  
 
         console.log(public)
         const response = await fetch('/api/dreams',{
@@ -23,6 +29,5 @@ async function addDreamHandler(event) {
             alert(response.statusText);
         }
     }
-
 
 document.querySelector('.new-dream-form').addEventListener('submit', addDreamHandler)
