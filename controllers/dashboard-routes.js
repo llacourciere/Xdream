@@ -1,5 +1,4 @@
 const router = require('express').Router();
-//const sequelize = require('../config/connection'); I DO NOT THINK WE NEED THIS -KEVIN
 const withAuth = require('../utils/auth');
 const { Dream, User, Comment, Tag } = require('../models');
 

@@ -17,7 +17,7 @@ Dream.init(
             allowNull: false
         },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.TEXT,
             allowNull: false
         },
         public: {

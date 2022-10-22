@@ -11,4 +11,15 @@ router.get('/', (req, res)=> {
     })
 });
 
+router.post('/', ({body}, res) => {
+        Tag.create({
+            tag_name: body.tag_name,
+        })
+            .then(dbTagData => res.json(dbTagData))
+            .catch(err => {
+                console.log(err);
+                res.status(400).json(err);
+            });
+    });
+
 module.exports = router; 
