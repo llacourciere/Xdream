@@ -9,7 +9,7 @@ User.hasMany(Dream, {
 });
 
 User.hasMany(Comment, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
 });
 
 User.belongsToMany(Dream, {
@@ -41,7 +41,7 @@ Comment.belongsTo(User, {
 });
 
 Comment.belongsTo(Dream, {
-    foreignKey: 'dream_id'
+   foreignKey: 'dream_id'
 });
 
 

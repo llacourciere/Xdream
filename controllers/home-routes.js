@@ -34,7 +34,7 @@ router.get('/', (req, res) => {
     })
     .then(dbDreamData => {
         const dreams = dbDreamData.map(dream => dream.get({ plain: true }));
-        res.render('homepage', {
+        res.render('login', {
             dreams,
             loggedIn: req.session.loggedIn
         });
