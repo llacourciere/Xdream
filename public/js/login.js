@@ -1,3 +1,5 @@
+const modal = document.querySelector('#signUpModal');
+
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -19,6 +21,7 @@ async function signupFormHandler(event) {
         if(response.ok) {
             console.log('success');
             document.location.replace('/dashboard');
+            $('#myModal').modal('hide')
         } else {
             alert(response.statusText);
         }

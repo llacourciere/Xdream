@@ -17,20 +17,17 @@
             <header>
                 <nav class="navbar navbar-dark bg-dark py-3" id="navbar">
                     <h1 class="text-center h1 display-3 text-light" id="navbar-text">Xdream</h1>
-                </nav>
-            </header>
-            <nav>
                 {{#if loggedIn}}
                 <a href="/dashboard">
-                    <button id="dashboard">Dashboard</button></a>
+                    <button class="btn btn-outline-secondary btn-light" id="dashboard">Dashboard</button></a>
                 <a href="/dream-forum">
-                    <button id="dreamscape-forum">Dreamscape Forum</button></a>
-                <button id="logout">Logout</button>
+                    <button class="btn btn-outline-secondary btn-light" id="dreamscape-forum">Dreamscape Forum</button></a>
+                <button class="btn btn-outline-secondary btn-light" id="logout">Logout</button>
                 {{else}}
                 <a href="/login"></a>
                 {{/if}}
+        
             </nav>
-        </header>
         <main>
             {{{ body }}}
         </main>
