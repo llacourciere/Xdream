@@ -7,7 +7,8 @@
     </div>
     <div class="meta">
         Dream posted by {{user.username}} on {{format_date created_at}}
-        <p>{{comments.length}} comment(s)</p>
+        |
+        <a href="/dream/{{id}}">{{comments.length}} comment(s)</a>
         {{#each tags}}
         {{/each}}
     </div>

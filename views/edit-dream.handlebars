@@ -3,7 +3,7 @@
     <h2>
         Edit Dream
     </h2>
-    <form>
+    <form class="edit-dream-form">
         <div>
             <input type="text" name="dream-title" value="{{dream.title}}" />
              <input type="text" name="dream-description" value="{{dream.description}}" />
@@ -12,16 +12,7 @@
         <button type="button">Delete Post</button>
     </form>
 </article>
-
-<form>
-  <div>
-    <textarea name="comment-body"></textarea>
-  </div>
-
-  <div>
-    <button type="submit">add comment</button>
-  </div>
-</form>
+<a href="/dream/{{id}}">{{comments.length}} comment(s)</a>
 
 {{> comments dream.comments}}
 
