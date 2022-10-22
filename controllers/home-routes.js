@@ -89,7 +89,7 @@ router.get('/dream/:id', (req, res) => {
         }
         const dream = dbDreamData.get({ plain: true });
         res.render('single-dream', {
-            post,
+            dream,
             loggedIn: req.session.loggedIn
         });
     })
