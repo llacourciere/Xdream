@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+textarea {
+    height: 200px;
+    width: 100%;
+}
+
+
+body {
+    background-image: linear-gradient(#ECE5F0, #B56576, #674b63, #18314f);
+    width: 100%;
+}
+
+main {
+    width: 100%;
+}
+
+.title {
+    font-weight: bold;
+}
