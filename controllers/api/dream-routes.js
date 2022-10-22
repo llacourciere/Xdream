@@ -9,7 +9,8 @@ router.get('/', (req, res) => {
             'id',
             'title',
             'description',
-            'created_at'
+            'created_at',
+            'tag_id'
         ],
         include: [
             {
