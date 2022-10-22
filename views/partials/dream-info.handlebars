@@ -1,3 +1,5 @@
+ <link rel="stylesheet" href="/css/style.css">
+
 <article class="dream">
     <div class="title">
         <span>{{title}}</span>
@@ -5,10 +7,12 @@
     <div class="description">
         <p>{{description}}</p>
     </div>
-    <div class="meta">
+    <div class="meta text-muted card-footer">
+       
         Dream posted by {{user.username}} on {{format_date created_at}}
         |{{#if public}}
-        <a href="/dream/{{id}}">{{comments.length}} comment(s)</a>
+        <a class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
+       
         {{/if}}
         {{#each tags}}
         {{/each}}
