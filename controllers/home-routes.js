@@ -23,7 +23,8 @@ router.get('/', (req, res) => {
                 }
             },
             {
-                model: Tag
+                model: Tag,
+                attributes: ['id','tag_name']
             },
             {
                 model: User,
@@ -98,5 +99,7 @@ router.get('/dream/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
+
+
 
 module.exports = router;

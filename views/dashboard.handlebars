@@ -9,8 +9,18 @@
         <div>
             <textarea name="dream-body"></textarea>
         </div>
+
         <label for="public-dream">Would you like this dream to be public?</label>
         <input type="checkbox" id="public-dream">
+
+
+        <span>Select tags To categorize your dream?</span>
+        {{#each tags as |tag|}}
+
+                <label for="dream-tags">{{tag_name}}</label>
+                <input type="checkbox" id="dream-tags">
+
+        {{/each}}
 
         <button type="submit" class="btn">Create</button>
     </form>
@@ -28,7 +38,7 @@
             <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
         </li>
     </ol>
-     {{/if}}
+    {{/if}}
     {{/each}}
     <h2>Your Private Dreams</h2>
     {{#each dreams as |dream|}}
