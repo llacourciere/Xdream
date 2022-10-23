@@ -1,18 +1,15 @@
-<article class="dream">
-    <div class="title">
-        <span>{{title}}</span>
+<article class="dream card">
+    <div class="title card-header">
+        <h6>{{title}}</h6>
     </div>
-    <div class="description">
+    <div class="description card-body">
         <p>{{description}}</p>
     </div>
     <div class="meta text-muted card-footer">
        
         Dream posted by {{user.username}} on {{format_date created_at}}
-        |{{#if public}}
-        <a class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
-       
+        {{#if public}}
+        | <a class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
         {{/if}}
-        {{#each tags}}
-        {{/each}}
     </div>
 </article>

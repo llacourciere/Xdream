@@ -8,10 +8,10 @@
     <h2 class="text-center" id="dreamscape-title">Dreamscape Forum</h2>
     {{#each dreams as |dream|}}
     {{#if public}}
-    <div data-aos="fade-up" data-aos-duration="3000" class="card" style="width: 50rem;">
-        <div class="card-body">
-            <p class="card-text">{{> dream-info dream}}</p>
-        </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="card" style="width: 50rem;">
+        {{!-- <div> --}}
+            {{> dream-info dream}}
+        {{!-- </div> --}}
     </div>
     {{/if}}
     {{/each}}

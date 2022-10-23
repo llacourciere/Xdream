@@ -1,12 +1,13 @@
+<link rel="stylesheet" href="/css/dashboard.css" />
 {{> dream-info dream }}
 {{#if loggedIn}}
 <form class="comment-form">
-    <div>
-        <textarea name="comment-body"></textarea>
+    <div class="row">
+        <textarea class="col-10 col-sm-8 mt-2" name="comment-body"></textarea>
     </div>
 
     <div>
-        <button type="submit">add comment</button>
+        <button class="btn btn-secondary mt-2" type="submit">add comment</button>
     </div>
 </form>
 {{/if}}
