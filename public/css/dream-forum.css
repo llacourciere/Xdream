@@ -1,21 +1,23 @@
 .card {
-    margin: 100px;
-    height: 270px;
-
+    margin: 0 auto 40px;
+    background-color: #ece5f0;
+    padding: 0;
+    /* margin: 100px; */
+    /* height: 270px; */
 }
 
-.title {
+/* .title {
     font-weight: bolder;
     font-size: 35px;
-}
-
+}  */
+/* 
 .meta {
     margin-top: 20px;
-}
+} */
 
-.description {
+/* .description {
     padding: 30px;
-}
+} */
 
 #dreamscape-title {
     font-size: 50px;
@@ -24,4 +26,5 @@
 
 body {
     background-image: url(../images/pexels-guillaume-meurice-2873671.jpg);
+    background-attachment: fixed;
 }
