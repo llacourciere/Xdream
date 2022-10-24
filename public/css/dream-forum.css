@@ -28,3 +28,8 @@ body {
     background-image: url(../images/pexels-guillaume-meurice-2873671.jpg);
     background-attachment: fixed;
 }
+
+textarea {
+    height: 200px;
+    width: 100%;
+}
