@@ -15,9 +15,10 @@
     <div class="wrapper">
         <header>
             <header>
-                <nav class="navbar navbar-dark bg-dark py-3" id="navbar">
-                    <h1 class="text-center h1 display-3 text-light" id="navbar-text">Xdream</h1>
+                <nav class="navbar navbar-dark bg-dark py-3 justify-content-between" id="navbar">
+                    <h1 class="h1 display-3 text-light" id="navbar-text">Xdream</h1>
                 {{#if loggedIn}}
+                <div>
                 <a href="/dashboard">
                     <button class="btn btn-outline-secondary btn-light" id="dashboard">Dashboard</button></a>
                 <a href="/dream-forum">
@@ -26,6 +27,7 @@
                 {{else}}
                 <a href="/login"></a>
                 {{/if}}
+                </div>
         
             </nav>
         <main>
