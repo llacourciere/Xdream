@@ -1,12 +1,9 @@
 <article class="dream card">
     <div class="title card-header">
-        <h6>{{title}}</h6>
+        <h6>{{title}}{{#if tag_id}} | {{tag_id}}{{/if}}</h6>
     </div>
     <div class="description card-body">
         <p>{{description}}</p>
-        {{#if tag_id}}
-        <p>Dream Type: {{tag_id}}</p>
-        {{/if}}
     </div>
     <div class="meta text-muted card-footer">
        
