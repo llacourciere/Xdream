@@ -47,7 +47,7 @@
 
 <section class="row justify-content-around">
     <div class="col-11 col-sm-5">
-        <h2 class="record-title">Your Public Dreams</h2>
+        <h2 class="record-title">Published Dreams</h2>
         {{#each dreams as |dream|}}
         {{#if public}}
         <ol>
@@ -60,7 +60,7 @@
         {{/each}}
     </div>
     <div class="col-11 col-sm-5">
-        <h2 class="record-title">Your Private Dreams</h2>
+        <h2 class="record-title">Private Dreams</h2>
         {{#each dreams as |dream|}}
         {{#unless public}}
         <ol>
