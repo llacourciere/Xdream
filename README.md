@@ -12,7 +12,7 @@
 3. [Installation](#installation)
 4. [Usage](#usage)
 5. [Contributing](#contributing)
-6.  [Acknowledgments](#acknowledgments)
+6. [Acknowledgments](#acknowledgments)
 
 ## Description
 
