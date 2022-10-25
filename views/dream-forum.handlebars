@@ -1,25 +1,28 @@
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link rel="stylesheet" href="/css/style.css">
-  <link rel="stylesheet" href="/css/dream-forum.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="/css/dream-forum.css">
 
 {{#if dreams.length}}
 
 <section>
-    <h2 class="text-center" id="dreamscape-title">Dreamscape Forum</h2>
+  <h2 class="text-center" id="dreamscape-title">Dreamscape Forum</h2>
+  <div class="container-fluid justify-content-center">
     {{#each dreams as |dream|}}
     {{#if public}}
-    <div data-aos="fade-up" data-aos-duration="1500" class="card" style="width: 50rem;">
-        {{!-- <div> --}}
-            {{> dream-info dream}}
+    <div data-aos="fade-up" data-aos-duration="1500" style="width: 50rem" class="col-12 m-auto">
+      {{!-- <div> --}}
+        {{> dream-info dream}}
         {{!-- </div> --}}
     </div>
     {{/if}}
     {{/each}}
 
+  </div>
+
 </section>
 {{/if}}
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init();
-  </script>
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
