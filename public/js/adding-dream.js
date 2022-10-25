@@ -8,8 +8,8 @@ $('#lucid').on('click', function(){
 $('#realistic').on('click', function(){
     tag_id = 'Realistic'
 });
-$('#reoccurring').on('click', function(){
-    tag_id = 'Reoccuring'
+$('#recurring').on('click', function(){
+    tag_id = 'Recurring'
 });
 $('#prophetic').on('click', function(){
     tag_id = 'Prophetic'
