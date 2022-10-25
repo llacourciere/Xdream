@@ -6,6 +6,11 @@
     /* height: 270px; */
 }
 
+#comment-card {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 /* .title {
     font-weight: bolder;
     font-size: 35px;
@@ -32,4 +37,8 @@ body {
 textarea {
     height: 200px;
     width: 100%;
+}
+
+.comment-form-top {
+    margin-top: 0px;
 }

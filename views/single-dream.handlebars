@@ -1,18 +1,26 @@
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/dream-forum.css" />
+<div class="container col-10 mt-4">
 {{> dream-info dream }}
+</div>
 {{#if loggedIn}}
 <form class="comment-form">
-    <div class="row">
-        <textarea class="col-10 col-sm-8 mt-2" name="comment-body"></textarea>
+    <div class="row justify-content-center">
+        <textarea id="textarea" class="col-10 col-sm-8 mt-2" name="comment-body"></textarea>
     </div>
-
-    <div>
-        <button class="btn btn-secondary mt-2" type="submit">add comment</button>
-    </div>
+    <div class="row justify-content-center">
+     <button class="btn btn-secondary mt-2" type="submit">add comment</button>
+     </div>
 </form>
 {{/if}}
-
 {{> comments dream.comments}}
-{{#if loggedIn}}
+  
+  {{#if loggedIn}}
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
 <script src="/js/comment.js"></script>
 {{/if}}
