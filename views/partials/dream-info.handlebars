@@ -1,15 +1,16 @@
 <article class="dream card">
-    <div class="title card-header">
-        <h6>{{title}}{{#if tag_id}} | {{tag_id}}{{/if}}</h6>
+    <div class="title card-header" id="dreams-title">
+        <h6>{{title}}</h6>
+
     </div>
     <div class="description card-body">
         <p>{{description}}</p>
     </div>
-    <div class="meta text-muted card-footer">
+    <div class="meta text-muted card-footer" id="dream-footer">
        
         Dream posted by {{user.username}} on {{format_date created_at}}
         {{#if public}}
-        | <a class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
+        | <a id="dream-edit" class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
         {{/if}}
     </div>
 </article>
