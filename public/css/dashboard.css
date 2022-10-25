@@ -26,8 +26,21 @@ main {
 
 .title {
     font-weight: bold;
+    color: #18314F
 }
 
+.record-title {
+  color: #18314F
+}
+#dreams-title {
+  color: #B56576;
+}
+.description {
+ color: #18314F
+}
+ /* #dream-footer {
+  background-color: #ECE5F0;
+} */
 /* custom checkbox */
 .container {
     display: block;

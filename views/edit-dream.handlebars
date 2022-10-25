@@ -1,25 +1,23 @@
 <link rel="stylesheet" href="/css/dashboard.css" />
 
-
-<a href="/dashboard">&larr; My Dashboard</a>
 <div>
 
-    <form class="edit-dream-form">
-        <h2 class=" d-flex justify-content-center">
+    <form class="edit-dream-form form-group col-11 ml-5">
+        <h2 class=" d-flex justify-content-center record-title">
             Edit Dream
         </h2>
-        <div class="row justify-content-center">
-            <input type="text" name="dream-title" class="col-8 col-sm-4 mb-1" value="{{dream.title}}" />
-            <textarea type="text" name="dream-description" class="col-10 mb-2">{{dream.description}}</textarea>
+        <div class="row">
+            <input type="text" name="dream-title" class="col-8 col-sm-4 mb-1 form-control my-2 record-title" value="{{dream.title}}" />
+            <textarea type="text" name="dream-description" class="col-10 mb-2 form-control my-2 record-title ">{{dream.description}}</textarea>
         </div>
-        <div class="row justify-content-center">
+        <div class="row">
             <button class="btn btn-secondary mx-2" type="submit">Save Dream</button>
             <button type="button" class="delete-dream-btn btn btn-danger mx-2">Delete Dream</button>
         </div>
     </form>
 </div>
 
-<a href="/dream/{{id}}">{{comments.length}} comment(s)</a>
+<a  class="text-info ml-5 font-weight-bold" href="/dream/{{dream.id}}">{{comments.length}} comment(s)</a>
 
 {{> comments dream.comments}}
 
