@@ -1,6 +1,6 @@
 <article class="dream card">
     <div class="title card-header" id="dreams-title">
-        <h6>{{title}}</h6>
+        <h6>{{title}}{{#if tag_id}} | {{tag_id}} {{/if}}</h6>
 
     </div>
     <div class="description card-body">
@@ -10,7 +10,7 @@
        
         Dream posted by {{user.username}} on {{format_date created_at}}
         {{#if public}}
-        | <a id="dream-edit" class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
+        | <a  class="text-dark" href="/dream/{{id}}">{{comments.length}} comment(s)</a>
         {{/if}}
     </div>
 </article>
