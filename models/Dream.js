@@ -32,11 +32,11 @@ Dream.init(
             }
         },
         tag_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'tag',
-                key: 'id'
-            }
+            type: DataTypes.STRING,
+            // references: {
+            //     model: 'tag',
+            //     key: 'id'
+            // }
         },  
     },
     {
