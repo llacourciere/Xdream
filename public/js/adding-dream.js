@@ -1,24 +1,24 @@
 let tag_id
 $('#nightmare').on('click', function(){
-    tag_id = 1
+    tag_id = 'Nightmare'
 });
 $('#lucid').on('click', function(){
-    tag_id = 2
+    tag_id = 'Lucid'
 });
 $('#realistic').on('click', function(){
-    tag_id = 3
+    tag_id = 'Realistic'
 });
-$('#reoccurring').on('click', function(){
-    tag_id = 4
+$('#recurring').on('click', function(){
+    tag_id = 'Recurring'
 });
 $('#prophetic').on('click', function(){
-    tag_id = 5
+    tag_id = 'Prophetic'
 });
 $('#daydream').on('click', function(){
-    tag_id = 6
+    tag_id = 'Daydream'
 });
 $('#erotic').on('click', function(){
-    tag_id = 7
+    tag_id = 'Erotic'
 });
 
 async function addDreamHandler(event) {

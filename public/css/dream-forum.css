@@ -6,6 +6,11 @@
     /* height: 270px; */
 }
 
+#comment-card {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
 /* .title {
     font-weight: bolder;
     font-size: 35px;
@@ -26,10 +31,16 @@
 
 body {
     background-image: url(../images/pexels-guillaume-meurice-2873671.jpg);
+    background-size: cover;
     background-attachment: fixed;
 }
 
 textarea {
     height: 200px;
+    width: 100%;
+}
+
+#textarea {
+    height: 150px;
     width: 100%;
 }
