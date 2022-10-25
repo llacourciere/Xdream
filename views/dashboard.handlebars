@@ -17,7 +17,7 @@
                     <textarea name="dream-body" class="form-control" placeholder="Describe your dream here"></textarea>
                 </div>
             </div>
-            <div class="form-group float-left mx-1">
+            <div class="form-group">
                 <label class="container record-title" for="public-dream">Would you like this dream to be public?
                     <input type="checkbox" id="public-dream">
                     <span class="checkmark form-control"></span>
@@ -53,7 +53,7 @@
         <ol>
             <li class="card">
                 {{> dream-info dream}}
-                <a href="/dashboard/edit/{{dream.id}}" class="edit-link text-info mt-1">Edit Dream</a>
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link py-2">Edit Dream</a>
             </li>
         </ol>
         {{/if}}
@@ -66,7 +66,7 @@
         <ol>
             <li class="card">
                 {{> dream-info dream}}
-                <a href="/dashboard/edit/{{dream.id}}" class="edit-link text-info mt-1">Edit Dream</a>
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link py-2">Edit Dream</a>
             </li>
         </ol>
         {{/unless}}

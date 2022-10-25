@@ -33,14 +33,17 @@ main {
   color: #18314F
 }
 #dreams-title {
-  color: #B56576;
+  color: #18314F;
 }
 .description {
  color: #18314F
 }
- /* #dream-footer {
-  background-color: #ECE5F0;
-} */
+.edit-link {
+  background-color: #9DC7C8;
+  color: #ECE5F0;
+  text-align: center;
+}
+
 /* custom checkbox */
 .container {
     display: block;
