@@ -2,6 +2,7 @@ const User = require('./User');
 const Dream = require('./Dream');
 const Comment = require('./Comment');
 
+// create associations:
 User.hasMany(Dream, {
     foreignKey: 'user_id'
 });

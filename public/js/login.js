@@ -1,5 +1,6 @@
 const modal = document.querySelector('#signUpModal');
 
+//creates a user by grabbing data from the user sign up modal
 async function signupFormHandler(event) {
     event.preventDefault();
 
@@ -17,7 +18,7 @@ async function signupFormHandler(event) {
             }),
             headers: { 'Content-type': 'application/json' }
         });
-
+//if the information is valid signs the user in and takes them to the dashboard
         if(response.ok) {
             console.log('success');
             document.location.replace('/dashboard');
@@ -28,6 +29,7 @@ async function signupFormHandler(event) {
     }
 }
 
+//logs in a user if they exist in the db
 async function loginFormHandler(event) {
     event.preventDefault();
 
@@ -43,7 +45,7 @@ async function loginFormHandler(event) {
             }),
             headers: { 'Content-type': 'application/json' }
         })
-
+// changes the user to their dashboard once logged in
         if(response.ok) {
             document.location.replace('/dashboard');
         } else {

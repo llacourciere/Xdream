@@ -1,3 +1,4 @@
+//Adds comments to dreams
 async function commentFormHandler(event) {
     event.preventDefault();
 
