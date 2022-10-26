@@ -1,5 +1,6 @@
 let tag_id
 const drpDwnBtn = document.getElementById('drpDwnBtn');
+//Changes tag_id in fetch request to tag chosen, and changes drop down tag selector text
 $('#nightmare').on('click', function(){
     tag_id = 'Nightmare'
     drpDwnBtn.textContent = 'Nightmare'
@@ -29,6 +30,7 @@ $('#erotic').on('click', function(){
     drpDwnBtn.textContent = 'Erotic'
 });
 
+//Adds new dreams
 async function addDreamHandler(event) {
     event.preventDefault();
 
