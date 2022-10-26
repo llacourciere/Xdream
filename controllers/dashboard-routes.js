@@ -1,8 +1,8 @@
 const router = require('express').Router();
-//const sequelize = require('../config/connection'); I DO NOT THINK WE NEED THIS -KEVIN
 const withAuth = require('../utils/auth');
-const { Dream, User, Comment, Tag } = require('../models');
+const { Dream, User, Comment} = require('../models');
 
+//get all dreams, the associated user and any comments attached to them
 router.get('/', withAuth, (req, res) => {
     Dream.findAll({
         where: {
@@ -28,10 +28,6 @@ router.get('/', withAuth, (req, res) => {
             {
                 model: User,
                 attributes: ['username']
-            },
-            {
-               model: Tag,
-               attributes: ['id', 'tag_name'] 
             }
         ]
     })
@@ -45,6 +41,7 @@ router.get('/', withAuth, (req, res) => {
         });
 });
 
+//edit a dream that is selected by id 
 router.get('/edit/:id', withAuth, (req, res) => {
     Dream.findOne({
         where: {
@@ -70,10 +67,6 @@ router.get('/edit/:id', withAuth, (req, res) => {
                 model: User, 
                 attributes: ['username']
             },
-            {
-                model: Tag,
-                attributes: ['id', 'tag_name'] 
-             }
         ]
     })
         .then(dbDreamData => {
@@ -93,15 +86,16 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-router.get('/tags', (req, res)=> {
-    Tag.findAll()
-    .then(dbTagData => {
-        const tag = dbTagData.get({ plain: true });
-        res.render('dashboard', { tag, loggedIn: true })})
-    .catch(err => {
-        console.log(err);
-        res.status(500).json(err);
-    })
-});
+// //get all tags from the database
+// router.get('/tags', (req, res)=> {
+//     Tag.findAll()
+//     .then(dbTagData => {
+//         const tag = dbTagData.get({ plain: true });
+//         res.render('dashboard', { tag, loggedIn: true })})
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// });
 
 module.exports = router;

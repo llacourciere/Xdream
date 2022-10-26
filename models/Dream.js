@@ -33,10 +33,6 @@ Dream.init(
         },
         tag_id: {
             type: DataTypes.STRING,
-            // references: {
-            //     model: 'tag',
-            //     key: 'id'
-            // }
         },  
     },
     {

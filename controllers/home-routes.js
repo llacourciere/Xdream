@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { User, Dream, Comment, Tag } = require('../models');
+const { User, Dream, Comment} = require('../models');
 
 router.get('/', (req, res) => {
     console.log("i'm hit!");
@@ -21,10 +21,6 @@ router.get('/', (req, res) => {
                     model: User,
                     attributes:['username']
                 }
-            },
-            {
-                model: Tag,
-                attributes: ['id','tag_name']
             },
             {
                 model: User,
@@ -74,9 +70,6 @@ router.get('/dream/:id', (req, res) => {
                     model: User,
                     attributes:['username']
                 }
-            },
-            {
-                model: Tag
             },
             {
                 model: User,
