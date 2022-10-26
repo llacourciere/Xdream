@@ -1,3 +1,4 @@
+// get the users and replaces the user dashboard with the log in screen once logged out
 async function logout() {
     const response = await fetch('/api/users/logout', {
         method: 'post',
