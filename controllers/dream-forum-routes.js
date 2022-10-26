@@ -1,9 +1,9 @@
 const router = require('express').Router();
-const { User, Dream, Comment, Tag } = require('../models');
+const { User, Dream, Comment} = require('../models');
 const withAuth = require('../utils/auth');
 
+//get all dreams on the dream forum page that have been marked as public
 router.get('/', withAuth, (req, res) => {
-    console.log("i'm hit!");
     Dream.findAll({
         where: {
             public: true
@@ -23,9 +23,6 @@ router.get('/', withAuth, (req, res) => {
                     model: User,
                     attributes:['username']
                 }
-            },
-            {
-                model: Tag
             },
             {
                 model: User,

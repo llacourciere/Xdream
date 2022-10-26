@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<!--<link rel="stylesheet" href="/css/style.css">-->
 <link rel="stylesheet" href="/css/dream-forum.css">
 
 {{#if dreams.length}}
@@ -10,9 +9,9 @@
     {{#each dreams as |dream|}}
     {{#if public}}
     <div data-aos="fade-up" data-aos-duration="1500" style="width: 50rem" class="col-12 m-auto">
-      {{!-- <div> --}}
+
         {{> dream-info dream}}
-        {{!-- </div> --}}
+
     </div>
     {{/if}}
     {{/each}}
