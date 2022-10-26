@@ -94,6 +94,4 @@ router.get('/dream/:id', (req, res) => {
     });
 });
 
-
-
 module.exports = router;

@@ -86,16 +86,5 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-// //get all tags from the database
-// router.get('/tags', (req, res)=> {
-//     Tag.findAll()
-//     .then(dbTagData => {
-//         const tag = dbTagData.get({ plain: true });
-//         res.render('dashboard', { tag, loggedIn: true })})
-//     .catch(err => {
-//         console.log(err);
-//         res.status(500).json(err);
-//     })
-// });
 
 module.exports = router;

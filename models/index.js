@@ -27,6 +27,4 @@ Comment.belongsTo(Dream, {
    foreignKey: 'dream_id'
 });
 
-
-
 module.exports = { User, Dream, Comment}
