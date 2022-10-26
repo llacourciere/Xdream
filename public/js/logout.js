@@ -8,7 +8,6 @@ async function logout() {
     } else {
         alert(response.statusText);
     }
-}
+};
 
-console.log('I have loaded');
 document.querySelector('#logout').addEventListener('click', logout);

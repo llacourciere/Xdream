@@ -1,4 +1,26 @@
 console.log("this page has loaded")
+let tag_id
+$('#nightmare').on('click', function(){
+    tag_id = 'Nightmare'
+});
+$('#lucid').on('click', function(){
+    tag_id = 'Lucid'
+});
+$('#realistic').on('click', function(){
+    tag_id = 'Realistic'
+});
+$('#recurring').on('click', function(){
+    tag_id = 'Recurring'
+});
+$('#prophetic').on('click', function(){
+    tag_id = 'Prophetic'
+});
+$('#daydream').on('click', function(){
+    tag_id = 'Daydream'
+});
+$('#erotic').on('click', function(){
+    tag_id = 'Erotic'
+});
 
 async function editFormHandler(event) {
     event.preventDefault();
@@ -13,7 +35,8 @@ async function editFormHandler(event) {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            description
+            description,
+            tag_id
         }),
         headers: {
             'Content-Type': 'application/json'
