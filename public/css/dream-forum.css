@@ -1,9 +1,8 @@
+/* dream cards */
 .card {
     margin: 0 auto 40px;
     background-color: #ece5f0;
     padding: 0;
-    /* margin: 100px; */
-    /* height: 270px; */
 }
 
 #comment-card {
@@ -16,12 +15,14 @@
     color: white;
 }
 
+/* dreamscape background */
 body {
     background-image: url(../images/pexels-guillaume-meurice-2873671.jpg);
     background-size: cover;
     background-attachment: fixed;
 }
 
+/* inputs */
 textarea {
     height: 200px;
     width: 100%;
