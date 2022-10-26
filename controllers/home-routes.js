@@ -1,8 +1,8 @@
 const router = require('express').Router();
-const { User, Dream, Comment, Tag } = require('../models');
+const { User, Dream, Comment} = require('../models');
 
+//get all dreams and render them on the dashboard if user is logged in
 router.get('/', (req, res) => {
-    console.log("i'm hit!");
     Dream.findAll({
         where: {
             public: true
@@ -23,10 +23,6 @@ router.get('/', (req, res) => {
                 }
             },
             {
-                model: Tag,
-                attributes: ['id','tag_name']
-            },
-            {
                 model: User,
                 attributes: ['username']
             }
@@ -45,6 +41,7 @@ router.get('/', (req, res) => {
     });
 });
 
+//login user and take to dashboard once logged in
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/dashboard');
@@ -53,6 +50,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+//get a dream by id
 router.get('/dream/:id', (req, res) => {
     Dream.findOne({
         where: {
@@ -66,6 +64,7 @@ router.get('/dream/:id', (req, res) => {
             'public',
             'created_at'
         ],
+        //include comments and the user associated with it
         include: [
             {
                 model: Comment,
@@ -74,9 +73,6 @@ router.get('/dream/:id', (req, res) => {
                     model: User,
                     attributes:['username']
                 }
-            },
-            {
-                model: Tag
             },
             {
                 model: User,
@@ -89,6 +85,7 @@ router.get('/dream/:id', (req, res) => {
             res.status(404).json({ message: 'No dream found with this id' });
             return;
         }
+    //render a single dream 
         const dream = dbDreamData.get({ plain: true });
         res.render('single-dream', {
             dream,
@@ -100,7 +97,5 @@ router.get('/dream/:id', (req, res) => {
         res.status(500).json(err);
     });
 });
-
-
 
 module.exports = router;

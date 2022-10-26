@@ -1,27 +1,43 @@
 <link rel="stylesheet" href="/css/dashboard.css" />
 
-
-<a href="/dashboard">&larr; My Dashboard</a>
+<!--Edit dream form-->
 <div>
-
-    <form class="edit-dream-form">
-        <h2 class=" d-flex justify-content-center">
+    <form class="edit-dream-form form-group col-11 ml-5">
+        <h2 class=" d-flex justify-content-center record-title">
             Edit Dream
         </h2>
-        <div class="row justify-content-center">
-            <input type="text" name="dream-title" class="col-8 col-sm-4 mb-1" value="{{dream.title}}" />
-            <textarea type="text" name="dream-description" class="col-10 mb-2">{{dream.description}}</textarea>
+        <div class="row">
+            <input type="text" name="dream-title" class="col-8 col-sm-4 mb-1 form-control my-2 record-title" value="{{dream.title}}" />
+            <textarea type="text" name="dream-description" class="col-10 mb-2 form-control my-2 record-title ">{{dream.description}}</textarea>
         </div>
-        <div class="row justify-content-center">
-            <button class="btn btn-secondary mx-2" type="submit">Save Dream</button>
+        <!--dropdown menu to add a tag to a dream-->
+        <div class="row">
+              <button id="drpDwnBtn" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Add a tag
+                    </button>
+                    <div class="dropdown-menu">
+                        <a id="nightmare" class="dropdown-item" href="#">Nightmare</a>
+                        <a id="lucid" class="dropdown-item" href="#">Lucid</a>
+                        <a id="realistic" class="dropdown-item" href="#">Realistic</a>
+                        <a id="recurring" class="dropdown-item" href="#">Recurring</a>
+                        <a id="prophetic" class="dropdown-item" href="#">Prophetic</a>
+                        <a id="daydream" class="dropdown-item" href="#">Daydream</a>
+                        <a id="erotic" class="dropdown-item" href="#">Erotic</a>
+                    </div>
+            <button class="btn btn-dark mx-2" type="submit">Save Dream</button>
             <button type="button" class="delete-dream-btn btn btn-danger mx-2">Delete Dream</button>
         </div>
     </form>
 </div>
 
-<a href="/dream/{{dream.id}}}">{{comments.length}} comment(s)</a>
+<a  class="text-info ml-5 font-weight-bold" href="/dream/{{dream.id}}">{{comments.length}} comment(s)</a>
 
+<!--Adds the comments partial and data to the page-->
 {{> comments dream.comments}}
 
+<!--JQuery links and javascript pages-->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="/js/edit-dream.js"></script>
 <script src="/js/delete-dream.js"></script>

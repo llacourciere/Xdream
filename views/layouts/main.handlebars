@@ -16,8 +16,11 @@
     <div class="wrapper">
         <header>
             <header>
+                <!--Main nav bar-->
                 <nav class="navbar navbar-dark bg-dark py-3 justify-content-between" id="navbar">
                     <h1 class="h1 display-3 text-light" id="navbar-text">Xdream</h1>
+                
+                <!--If the user is logged dashboard, dreamscape and login buttons will render-->
                 {{#if loggedIn}}
                 <div>
                 <a href="/dashboard">
@@ -26,26 +29,26 @@
                     <button class="btn btn-outline-secondary btn-light" id="dreamscape-forum">Dreamscape Forum</button></a>
                 <button class="btn btn-outline-secondary btn-light" id="logout">Logout</button>
                 {{else}}
+                <!--If user is not logged in it will render login page-->
                 <a href="/login"></a>
                 {{/if}}
                 </div>
         
             </nav>
         <main>
+        <!--The other handlebars files will render here when called-->
             {{{ body }}}
         </main>
 
+    <!--links for bootstrap and jQuery-->
     </div>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
-        crossorigin="anonymous"></script>
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
 
+    <!--If user is logged in then the logout javascript file will load-->
     {{#if loggedIn}}
     <script src="/js/logout.js"></script>
-    <script src="/js/adding-dream.js"></script>
     {{/if}}
 
 

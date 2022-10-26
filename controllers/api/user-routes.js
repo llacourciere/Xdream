@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const {User, Dream, DreamTag, Tag} = require('../../models')
 
+//get all users 
 router.get('/', (req,res) => {
     User.findAll({
         attributes: { exclude: ['password']}
@@ -12,6 +13,7 @@ router.get('/', (req,res) => {
     });
 })
 
+//fnd a user and include their dreams 
 router.get('/:id', (req, res) => {
     User.findOne({
       attributes: { exclude: ['password'] },
@@ -59,6 +61,7 @@ router.get('/:id', (req, res) => {
       });
   });
   
+  //login a user using the email they signed up with
   router.post('/login', (req, res) => {
     User.findOne({
       where: {
@@ -69,7 +72,7 @@ router.get('/:id', (req, res) => {
         res.status(400).json({ message: 'No user with that email address!' });
         return;
       }
-  
+  //check that the hashed password matches the password they input
       const validPassword = dbUserData.checkPassword(req.body.password);
   
       if (!validPassword) {
@@ -87,6 +90,7 @@ router.get('/:id', (req, res) => {
     });
   });
   
+  //logout a user and destroy the cookies they are using for their current session
   router.post('/logout', (req, res) => {
     if (req.session.loggedIn) {
       req.session.destroy(() => {
@@ -118,6 +122,7 @@ router.get('/:id', (req, res) => {
       });
   });
   
+  //delete a user account
   router.delete('/:id', (req, res) => {
     User.destroy({
       where: {

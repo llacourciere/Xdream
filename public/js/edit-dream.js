@@ -1,5 +1,36 @@
-console.log("this page has loaded")
+//Changes tag_id in fetch request to tag chosen, and changes drop down tag selector text
+let tag_id
+const drpDwnBtn = document.getElementById('drpDwnBtn');
+$('#nightmare').on('click', function(){
+    tag_id = 'Nightmare'
+    drpDwnBtn.textContent = 'Nightmare'
+});
+$('#lucid').on('click', function(){
+    tag_id = 'Lucid'
+    drpDwnBtn.textContent = 'Lucid'
+});
+$('#realistic').on('click', function(){
+    tag_id = 'Realistic'
+    drpDwnBtn.textContent = 'Realistic'
+});
+$('#recurring').on('click', function(){
+    tag_id = 'Recurring'
+    drpDwnBtn.textContent = 'Recurring'
+});
+$('#prophetic').on('click', function(){
+    tag_id = 'Prophetic'
+    drpDwnBtn.textContent = 'Prophetic'
+});
+$('#daydream').on('click', function(){
+    tag_id = 'Daydream'
+    drpDwnBtn.textContent = 'Daydream'
+});
+$('#erotic').on('click', function(){
+    tag_id = 'Erotic'
+    drpDwnBtn.textContent = 'Erotic'
+});
 
+//Edits the selected dream's title, description, or tag_id
 async function editFormHandler(event) {
     event.preventDefault();
 
@@ -13,7 +44,8 @@ async function editFormHandler(event) {
         method: 'PUT',
         body: JSON.stringify({
             title,
-            description
+            description,
+            tag_id
         }),
         headers: {
             'Content-Type': 'application/json'

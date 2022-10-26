@@ -1,4 +1,3 @@
-
 const path = require('path');
 const express = require('express');
 const routes = require('./controllers');
@@ -36,6 +35,6 @@ app.use(session(sess));
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: false}).then(() => {
+sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () => console.log('Now listening'));
 });

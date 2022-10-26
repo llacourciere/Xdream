@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const withAuth = require('../../utils/auth');
 const sequelize = require('../../config/connection');
-const { Dream, User, Comment, DreamTag } = require('../../models');
+const { Dream, User, Comment} = require('../../models');
 
+//get all dreams
 router.get('/', (req, res) => {
     Dream.findAll({
         attributes: [
@@ -12,6 +13,7 @@ router.get('/', (req, res) => {
             'created_at',
             'tag_id'
         ],
+        //include comments and associated users for the dreams
         include: [
             {
                 model: Comment,
@@ -34,6 +36,7 @@ router.get('/', (req, res) => {
         })
 });
 
+//get a single dream
 router.get('/:id', (req, res) => {
     Dream.findOne({
         where: {
@@ -73,6 +76,7 @@ router.get('/:id', (req, res) => {
         });
 });
 
+//create a dream and associate it with the user session so it is attached to the users account
 router.post('/', (req, res) => {
     if (req.session) {
       Dream.create({
@@ -94,7 +98,8 @@ router.post('/', (req, res) => {
     Dream.update(
       {
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        tag_id: req.body.tag_id
       },
       {
         where: {
@@ -115,6 +120,7 @@ router.post('/', (req, res) => {
       });
   });
   
+  //delete a dream by the id 
   router.delete('/:id', withAuth, (req, res) => {
     console.log('id', req.params.id);
     Dream.destroy({

@@ -1,66 +1,80 @@
 <link rel="stylesheet" href="/css/dashboard.css">
 
+<!--Recording dream section-->
 <section class="d-flex justify-content-center">
-    <form class="new-dream-form col-10">
-        <h2> Record Your Dream</h2>
-        <div class="row mb-1 mx-1">
-            <label for="dream-title"><strong>Title</strong></label>
-            <input type="text" class="col-8 col-sm-4" name="dream-title" id="dream-title" />
-        </div>
-        <div class="row mb-2">
-            <textarea name="dream-body" placeholder="Describe your dream here"></textarea>
+    <form class="new-dream-form pl-0 col-10">
+        <div class="mx-1 mt-2">
+        <h2 class="record-title"> Record Your Dream</h2>
         </div>
 
-        <label class="container" for="public-dream">Would you like this dream to be public?
-            <input type="checkbox" id="public-dream">
-            <span class="checkmark"></span>
-        </label>
-
-        <div class="dropdown my-1">
-            <button class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
-                aria-expanded="false">
-                Add a tag
-            </button>
-           
-            <div class="dropdown-menu">
-                <a id="nightmare" class="dropdown-item" href="#">Nightmare</a>
-                <a id="lucid" class="dropdown-item" href="#">Lucid</a>
-                <a id="realistic" class="dropdown-item" href="#">Realistic</a>
-                <a id="reoccuring" class="dropdown-item" href="#">Reoccurring</a>
-                <a id="prophetic" class="dropdown-item" href="#">Prophetic</a>
-                <a id="daydream" class="dropdown-item" href="#">Daydream</a>
-                <a id="erotic" class="dropdown-item" href="#">Erotic</a>
+        <!--dream title-->
+        <div class="form-group">
+            <div class="form-group">
+                <div class="row mb-1 mx-1">
+                    <input type="text" class="col-8 col-sm-4 form-control" name="dream-title" id="dream-title" placeholder="Title"/>
+                </div>
             </div>
-       
-            <button type="submit" class="btn btn-dark">Create</button>
+        <!--textarea for dream-->
+            <div class="form-group">
+                <div class="row mb-2 mx-1">
+                    <textarea name="dream-body" class="form-control" placeholder="Describe your dream here"></textarea>
+                </div>
+            </div>
+        <!--checkbox to make the dream public-->
+            <div class="form-group">
+                <label class="container record-title" for="public-dream">Would you like this dream to be public?
+                    <input type="checkbox" id="public-dream">
+                    <span class="checkmark form-control"></span>
+                </label>
+            </div>
+            <!--dropdown menu to add a tag to the dream-->
+                <div class="dropdown my-1">
+                    <button id="drpDwnBtn" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
+                        aria-expanded="false">
+                        Add a tag
+                    </button>
+                    <div class="dropdown-menu">
+                        <a id="nightmare" class="dropdown-item" href="#">Nightmare</a>
+                        <a id="lucid" class="dropdown-item" href="#">Lucid</a>
+                        <a id="realistic" class="dropdown-item" href="#">Realistic</a>
+                        <a id="recurring" class="dropdown-item" href="#">Recurring</a>
+                        <a id="prophetic" class="dropdown-item" href="#">Prophetic</a>
+                        <a id="daydream" class="dropdown-item" href="#">Daydream</a>
+                        <a id="erotic" class="dropdown-item" href="#">Erotic</a>
+                    </div>
+                <button type="submit" class="btn btn-dark">Create</button>
+            </div>
         </div>
     </form>
 </section>
 
 {{#if dreams.length}}
 
+<!--Dream cards for dashboard-->
 <section class="row justify-content-around">
-    <div class="col-12 col-sm-6">
-        <h2>Your Public Dreams</h2>
+    <div class="col-11 col-sm-5">
+        <h2 class="record-title">Published Dreams</h2>
         {{#each dreams as |dream|}}
         {{#if public}}
         <ol>
             <li class="card">
                 {{> dream-info dream}}
-                <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link py-2">Edit Dream</a>
             </li>
         </ol>
         {{/if}}
         {{/each}}
     </div>
-    <div class="col-12 col-sm-6">
-        <h2>Your Private Dreams</h2>
+
+    <!--Private dream cards for dashboard-->
+    <div class="col-11 col-sm-5">
+        <h2 class="record-title">Private Dreams</h2>
         {{#each dreams as |dream|}}
         {{#unless public}}
         <ol>
             <li class="card">
                 {{> dream-info dream}}
-                <a href="/dashboard/edit/{{dream.id}}" class="edit-link">Edit Dream</a>
+                <a href="/dashboard/edit/{{dream.id}}" class="edit-link py-2">Edit Dream</a>
             </li>
         </ol>
         {{/unless}}
@@ -68,3 +82,7 @@
     </div>
 </section>
 {{/if}}
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="/js/adding-dream.js"></script>

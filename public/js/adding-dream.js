@@ -1,26 +1,36 @@
 let tag_id
+const drpDwnBtn = document.getElementById('drpDwnBtn');
+//Changes tag_id in fetch request to tag chosen, and changes drop down tag selector text
 $('#nightmare').on('click', function(){
-    tag_id = 1
+    tag_id = 'Nightmare'
+    drpDwnBtn.textContent = 'Nightmare'
 });
 $('#lucid').on('click', function(){
-    tag_id = 2
+    tag_id = 'Lucid'
+    drpDwnBtn.textContent = 'Lucid'
 });
 $('#realistic').on('click', function(){
-    tag_id = 3
+    tag_id = 'Realistic'
+    drpDwnBtn.textContent = 'Realistic'
 });
-$('#reoccurring').on('click', function(){
-    tag_id = 4
+$('#recurring').on('click', function(){
+    tag_id = 'Recurring'
+    drpDwnBtn.textContent = 'Recurring'
 });
 $('#prophetic').on('click', function(){
-    tag_id = 5
+    tag_id = 'Prophetic'
+    drpDwnBtn.textContent = 'Prophetic'
 });
 $('#daydream').on('click', function(){
-    tag_id = 6
+    tag_id = 'Daydream'
+    drpDwnBtn.textContent = 'Daydream'
 });
 $('#erotic').on('click', function(){
-    tag_id = 7
+    tag_id = 'Erotic'
+    drpDwnBtn.textContent = 'Erotic'
 });
 
+//Adds new dreams
 async function addDreamHandler(event) {
     event.preventDefault();
 
