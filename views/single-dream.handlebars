@@ -1,9 +1,13 @@
+<!--links to the AOS library, and stylesheets-->
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="/css/style.css">
 <link rel="stylesheet" href="/css/dream-forum.css" />
 <div class="container col-10 mt-4">
+<!--The dream-info partial will render here-->
 {{> dream-info dream }}
 </div>
+
+<!--Form for making comments on dreams, and it will only render if user is logged in-->
 {{#if loggedIn}}
 <form class="comment-form">
     <div class="row justify-content-center">
@@ -13,12 +17,14 @@
      <button class="btn btn-secondary mt-2" type="submit">add comment</button>
      </div>
 </form>
+
+<!--Adds the comments partial to the page-->
 {{/if}}
 {{> comments dream.comments}}
-  
-  {{#if loggedIn}}
 
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<!--Links to the animate on scroll library and the function call-->
+  {{#if loggedIn}}
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 <script>
   AOS.init();
 </script>

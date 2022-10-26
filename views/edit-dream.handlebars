@@ -1,7 +1,7 @@
 <link rel="stylesheet" href="/css/dashboard.css" />
 
+<!--Edit dream form-->
 <div>
-
     <form class="edit-dream-form form-group col-11 ml-5">
         <h2 class=" d-flex justify-content-center record-title">
             Edit Dream
@@ -10,6 +10,7 @@
             <input type="text" name="dream-title" class="col-8 col-sm-4 mb-1 form-control my-2 record-title" value="{{dream.title}}" />
             <textarea type="text" name="dream-description" class="col-10 mb-2 form-control my-2 record-title ">{{dream.description}}</textarea>
         </div>
+        <!--dropdown menu to add a tag to a dream-->
         <div class="row">
               <button id="drpDwnBtn" class="btn btn-secondary dropdown-toggle" type="button" data-toggle="dropdown"
                         aria-expanded="false">
@@ -32,8 +33,10 @@
 
 <a  class="text-info ml-5 font-weight-bold" href="/dream/{{dream.id}}">{{comments.length}} comment(s)</a>
 
+<!--Adds the comments partial and data to the page-->
 {{> comments dream.comments}}
 
+<!--JQuery links and javascript pages-->
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="/js/edit-dream.js"></script>
