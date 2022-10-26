@@ -94,7 +94,8 @@ router.post('/', (req, res) => {
     Dream.update(
       {
         title: req.body.title,
-        description: req.body.description
+        description: req.body.description,
+        tag_id: req.body.tag_id
       },
       {
         where: {

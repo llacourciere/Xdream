@@ -12,11 +12,11 @@ User.hasMany(Comment, {
     foreignKey: 'user_id',
 });
 
-User.belongsToMany(Dream, {
-    through: Comment,
-    as: 'commented_posts',
-    foreignKey: 'user_id'
-});
+// User.belongsToMany(Dream, {
+//     through: Comment,
+//     as: 'commented_posts',
+//     foreignKey: 'user_id'
+// });
 
 Dream.belongsTo(User, {
     foreignKey: 'user_id'
